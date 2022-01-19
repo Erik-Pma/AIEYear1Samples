@@ -167,7 +167,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\CDDS_BinaryTree\BinaryTree.cpp" />
+    <ClCompile Include="..\CDDS_BinaryTree\main.cpp" />
+    <ClCompile Include="..\CDDS_BinaryTree\TreeNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CDDS_BinaryTree\BinaryTree.h" />
+    <ClInclude Include="..\CDDS_BinaryTree\TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

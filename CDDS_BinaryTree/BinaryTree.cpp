@@ -35,6 +35,57 @@ bool BinaryTree::IsEmpty() const
 void BinaryTree::Insert(int a_nValue)
 {
 	
+	TreeNode* pCurrent = m_pRoot;
+	TreeNode* newNode = new TreeNode(a_nValue);
+	TreeNode* pParent = nullptr;
+	if (BinaryTree::IsEmpty())
+	{	
+		
+		m_pRoot = newNode;
+		cout << "input" << endl;
+		
+		return;
+	}
+	while (pCurrent != nullptr) 
+	{
+		
+		if ( a_nValue < pCurrent->GetData())
+		{
+			cout << "went left" << endl;
+			pParent = pCurrent;
+			pCurrent = pCurrent->GetLeft();
+		}
+		else if ( a_nValue > pCurrent->GetData())
+		{
+			cout << "went right" << endl;
+			pParent = pCurrent;
+			pCurrent = pCurrent->GetRight();
+		}
+		else if ( a_nValue == pCurrent ->GetData())
+		{
+			cout << "dupe break" << endl;
+			pParent = pCurrent;
+			return;
+		}
+		
+	}
+	cout << "out of while" << endl;
+	if (pParent->GetData() > a_nValue) 
+	{
+		cout << pParent->GetData() << newNode->GetData() << endl;
+		pParent->SetLeft(newNode);
+		cout << pParent->HasLeft() << endl;
+		return;
+	}
+	else
+	{
+		cout << pParent->GetData() << newNode->GetData() << endl;
+		pParent->SetRight(newNode) ;
+		cout << pParent->HasRight() << endl;
+		return;
+	}
+	
+
 }
 
 TreeNode* BinaryTree::Find(int a_nValue)
